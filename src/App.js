@@ -38,6 +38,16 @@ function App() {
     //this sets input field to empty after storing current value in the name variable, good UI for the app
   }
 
+  function tasksRemaining() {
+    const numOfTasks = parseInt(todos.length)
+    const isCompleted = () => {
+      const complete = todos.filter(todo => todo.completed === true)
+      return complete.length
+    }
+    const complete = parseInt(isCompleted())
+    return numOfTasks - complete
+  }
+  
   return (
     <>
       <TodoList
@@ -48,8 +58,10 @@ function App() {
       <button onClick={handleAddTodo}> Add Todo </button>
       <button>Clear Completed Todos</button>
       <div>
-        0 tasks remaining
-        {/* I can clean this up with a ternary statement later, to read 1 task instead of tasks when tasksRemaining === 1 */}
+        {/* the number of tasks on my list is the state of todos(.length) */}
+        {/* todos.length - # of todos that are checked = tasks remaining */}
+        {/* todos.completed is # of todos where completed === true */}
+        {tasksRemaining()} tasks remaining
       </div>
     </>
   )
