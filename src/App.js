@@ -10,18 +10,29 @@ function App() {
   const [todos, setTodos] = useState([])
   const todoNameRef = useRef()
 
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if(savedTodos) setTodos(savedTodos)
+  }, [])
   //first arg of useEffect is a function
   //second determines when useEffect runs/updates
-  //in this case, anytime the todos state changes
+  //in below case, anytime the todos state changes
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos)) 
   }, [todos])
+
+  function toggleTodo(id) {
+    const newTodos = [...todos]
+    const todo = newTodos.find(todo => todo.id === id)
+    todo.completed = !todo.completed
+    setTodos(newTodos)
+  }
 
   function handleAddTodo(e) {
     const name = todoNameRef.current.value
     if (name === '') return
     setTodos(prevTodos => {
-      return [...prevTodos, {id: random, name: name, completed: false}]
+      return [...prevTodos, {id: random(), name: name, completed: false}]
     })
     todoNameRef.current.value = null
     //this sets input field to empty after storing current value in the name variable, good UI for the app
@@ -30,6 +41,7 @@ function App() {
   return (
     <>
       <TodoList
+        toggleTodo={toggleTodo}
         currentTodos={todos}
       />
       <input ref={todoNameRef} type="text" />
