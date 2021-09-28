@@ -40,10 +40,13 @@ function App() {
 
   function tasksRemaining() {
     const numOfTasks = parseInt(todos.length)
+
+    //returns number of completed tasks
     const isCompleted = () => {
       const complete = todos.filter(todo => todo.completed === true)
       return complete.length
     }
+
     const complete = parseInt(isCompleted())
     return numOfTasks - complete
   }
@@ -58,10 +61,11 @@ function App() {
       <button onClick={handleAddTodo}> Add Todo </button>
       <button>Clear Completed Todos</button>
       <div>
-        {/* the number of tasks on my list is the state of todos(.length) */}
-        {/* todos.length - # of todos that are checked = tasks remaining */}
-        {/* todos.completed is # of todos where completed === true */}
-        {tasksRemaining()} tasks remaining
+        {
+          (tasksRemaining() === 1) ? 
+          '1 task remaining' : 
+          tasksRemaining() + ' tasks remaining'
+        }
       </div>
     </>
   )
