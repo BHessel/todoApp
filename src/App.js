@@ -38,15 +38,19 @@ function App() {
     //this sets input field to empty after storing current value in the name variable, good UI for the app
   }
 
+  function handleClear() {
+    const clearTheseTodos = todos.filter(todo => !todo.completed)
+    setTodos(clearTheseTodos)
+  }
+
+  //returns number of completed tasks, helper for tasks remaining
+  const isCompleted = () => {
+    const complete = todos.filter(todo => todo.completed === true)
+    return complete.length
+  }
+
   function tasksRemaining() {
     const numOfTasks = parseInt(todos.length)
-
-    //returns number of completed tasks
-    const isCompleted = () => {
-      const complete = todos.filter(todo => todo.completed === true)
-      return complete.length
-    }
-
     const complete = parseInt(isCompleted())
     return numOfTasks - complete
   }
@@ -59,7 +63,7 @@ function App() {
       />
       <input ref={todoNameRef} type="text" />
       <button onClick={handleAddTodo}> Add Todo </button>
-      <button>Clear Completed Todos</button>
+      <button onClick={handleClear}>Clear Completed Todos</button>
       <div>
         {
           (tasksRemaining() === 1) ? 
