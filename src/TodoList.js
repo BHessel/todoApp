@@ -4,11 +4,13 @@ import Todo from './Todo'
 export default function TodoList({ currentTodos, toggleTodo }) {
     return (
         currentTodos.map(task => {
-            return <Todo
+            return <div className='input'>
+                    <Todo
                     key={task.id}
                     task={task}
                     toggleTodo={toggleTodo}
                     />
+                    </div>
         })
     )
 }

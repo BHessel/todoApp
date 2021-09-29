@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
 import uniqueRandom from 'unique-random'
+import Header from './header'
 //uuid library wasn't working so I found this uniqueRandom lib. Probably not perfect but allows me to continue on
 
 const random = uniqueRandom(1, 100)
@@ -21,7 +22,7 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos)) 
   }, [todos])
 
-  
+
   function toggleTodo(id) {
     const newTodos = [...todos]
     const todo = newTodos.find(todo => todo.id === id)
@@ -58,20 +59,32 @@ function App() {
   
   return (
     <>
-      <TodoList
-        toggleTodo={toggleTodo}
-        currentTodos={todos}
-      />
-      <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}> Add Todo </button>
-      <button onClick={handleClear}>Clear Completed Todos</button>
-      <div>
+    <div className='grid-container'>
+      <Header />
+      <div className='input-area'>  
+        <input ref={todoNameRef} type="text" />
+        <button onClick={handleAddTodo}> Add Todo </button>
+        <button onClick={handleClear}>Clear Completed Todos</button>
+      </div>
+      <div className='list-area'>
+        <div className='not-done'>
+          <TodoList
+          toggleTodo={toggleTodo}
+          currentTodos={todos}
+          />
+        <div className='done'>
+          testing 123
+        </div>
+        </div>
+      </div>
+      <div className='tasks-remaining'>
         {
           (tasksRemaining() === 1) ? 
           '1 task remaining' : 
           tasksRemaining() + ' tasks remaining'
         }
       </div>
+    </div>
     </>
   )
 }

@@ -1,0 +1,41 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 300px 50px;
+    grid-template-areas:
+        "header header header"
+        "input list list"
+        "tasks tasks tasks"
+}
+
+.header {
+    background-color: red;
+    grid-area: header;
+}
+
+.input-area {
+    background-color: lightblue;
+    grid-area: input;
+}
+
+.list-area {
+    background-color: khaki;
+    grid-area: list;
+    display: flex;
+    flex-direction: column;
+}
+
+.not-done {
+    background-color: lightgreen;
+    grid-area: notDone
+}
+
+.done {
+    background-color: lightsalmon;
+    grid-area: done;
+}
+
+.tasks-remaining {
+    background-color: grey;
+    grid-area: tasks;
+}
