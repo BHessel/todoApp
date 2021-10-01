@@ -30,6 +30,7 @@ function App() {
     setTodos(newTodos)
   }
 
+
   function handleAddTodo(e) {
     const name = todoNameRef.current.value
     if (name === '') return
@@ -56,27 +57,25 @@ function App() {
     const complete = parseInt(isCompleted())
     return numOfTasks - complete
   }
-  
+
+
   return (
     <>
-    <div className='grid-container'>
-      <Header />
+    <Header />
+    <div className='grid-container'> 
       <div className='input-area'>  
-        <input ref={todoNameRef} type="text" />
-        <button onClick={handleAddTodo}> Add Todo </button>
-        <button onClick={handleClear}>Clear Completed Todos</button>
+        <input className= 'center' ref={todoNameRef} type="text" />
+        <button className= 'center' onClick={handleAddTodo}> Add Todo </button>
+        <button className= 'center' onClick={handleClear}>Clear Completed Todos</button>
       </div>
+
       <div className='list-area'>
-        <div className='not-done'>
-          <TodoList
+        <TodoList
           toggleTodo={toggleTodo}
           currentTodos={todos}
-          />
-        <div className='done'>
-          testing 123
-        </div>
-        </div>
+        />
       </div>
+
       <div className='tasks-remaining'>
         {
           (tasksRemaining() === 1) ? 
@@ -84,6 +83,7 @@ function App() {
           tasksRemaining() + ' tasks remaining'
         }
       </div>
+
     </div>
     </>
   )

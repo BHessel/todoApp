@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function Todo({ task, toggleTodo }) {
+export default function Todo({ task, toggleTodo, doneList }) {
     
     function handleTodoClick() {
-       toggleTodo(task.id) 
+       toggleTodo(task.id)
     }
+
     
     return (
         <div className=''>

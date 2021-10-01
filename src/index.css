@@ -1,41 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 300px 50px;
+    grid-template-rows: 500px 75px;
     grid-template-areas:
-        "header header header"
-        "input list list"
-        "tasks tasks tasks"
+        "input list"
+        "tasks tasks"
 }
 
-.header {
-    background-color: red;
-    grid-area: header;
-}
 
 .input-area {
     background-color: lightblue;
     grid-area: input;
 }
 
+
 .list-area {
-    background-color: khaki;
+    background-color: lightseagreen;
     grid-area: list;
     display: flex;
     flex-direction: column;
-}
-
-.not-done {
-    background-color: lightgreen;
-    grid-area: notDone
-}
-
-.done {
-    background-color: lightsalmon;
-    grid-area: done;
 }
 
 .tasks-remaining {
     background-color: grey;
     grid-area: tasks;
 }
+
+.header {
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.title {
+    font-family: Oswald;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+}
+
+.title a {
+    text-decoration: none;
+    color: rgb(163, 205, 219, 1);
+}
+
+.title a:hover{
+    color: rgb(163, 205, 219, .8)
+}
+
+.head-links {
+    margin-right: 40px;
+}
+
+.head-links li {
+    color:  rgb(211, 211, 211, 1);
+    display: inline-block;
+    padding: 0px 10px;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+}
+
+.head-links a {
+    text-decoration: none;
+    color:  rgb(211, 211, 211, 1);
+}
+
+.head-links a:hover {
+    color: rgb(211, 211, 211, .8)
+}
+
+
+button {
+    padding: 10px 50px;
+    font-family: Oswald;
+    background-color: rgb(163, 205, 219, 1);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+}
+
+button:hover {
+    background-color: rgb(163, 205, 219, .8)
+}
+
