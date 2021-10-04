@@ -73,6 +73,7 @@ function App() {
           <button className='center' onClick={handleClear}>Clear Completed Todos</button>
         </div>
       <div className='list-area'>
+        <div className='side-title'>Tasks Remaining</div>
         <TodoList
           toggleTodo={toggleTodo}
           currentTodos={todos}
