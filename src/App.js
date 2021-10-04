@@ -64,11 +64,13 @@ function App() {
     <>
     <Header />
     <div className='grid-container'> 
-      <div className='input-area'></div>
+      <div className='input-area'>
+        <img src={LASC} />
+      </div>
         <div className='input-fields'> 
-          <input className= 'center' ref={todoNameRef} type="text" />
-          <button className= 'center' onClick={handleAddTodo}> Add Todo </button>
-          <button className= 'center' onClick={handleClear}>Clear Completed Todos</button>
+          <input className='center' ref={todoNameRef} type="text" />
+          <button className='center' onClick={handleAddTodo}> Add Todo </button>
+          <button className='center' onClick={handleClear}>Clear Completed Todos</button>
         </div>
       <div className='list-area'>
         <TodoList
@@ -80,8 +82,8 @@ function App() {
       <div className='tasks-remaining'>
         {
           (tasksRemaining() === 1) ? 
-          '1 task remaining' : 
-          tasksRemaining() + ' tasks remaining'
+          '1 Task Remaining' : 
+          tasksRemaining() + ' Tasks Remaining'
         }
       </div>
 

@@ -4,7 +4,7 @@ import Todo from './Todo'
 export default function TodoList({ currentTodos, toggleTodo }) {
     return (
         currentTodos.map(task => {
-            return <div className='list-area'>
+            return <div>
                         <Todo
                         key={task.id}
                         task={task}

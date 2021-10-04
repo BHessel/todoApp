@@ -11,12 +11,15 @@
 
 
 .input-area {
-    display: grid;
+    display: flex;
     background-color:rgb(106, 228, 236);
     grid-area: img1;
-    background-image: url('./LASC.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    align-items: flex-end;
+}
+
+.input-area img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .input-fields {
@@ -30,15 +33,23 @@
 }
 
 .list-area {
-    background-color: lightseagreen;
+    background-color:rgb(106, 228, 236);
     grid-area: list;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-width:5px;  
+    border-left-style: dashed;
+    border-color: rgb(34, 34, 34, .8)
 }
 
 .tasks-remaining {
-    background-color: grey;
+    background-color: rgb(34, 34, 34);
     grid-area: tasks;
+    color:  rgb(211, 211, 211, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {

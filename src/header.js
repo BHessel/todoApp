@@ -17,10 +17,6 @@ export default function Header() {
                         <a href='https://github.com/BHessel/todoApp' target='_blank'>Github
                         </a>
                     </li>
-                    <li>
-                        <a href='https://youtu.be/2tCy-CdVruM?t=122' target='_blank'>Sorry
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div className='bs'>

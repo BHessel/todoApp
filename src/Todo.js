@@ -8,7 +8,7 @@ export default function Todo({ task, toggleTodo, doneList }) {
 
     
     return (
-        <div className=''>
+        <div className='input-item'>
             <label>
             <input type="checkbox" checked={task.completed} onChange={handleTodoClick} />
                 {task.name}
