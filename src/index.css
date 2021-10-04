@@ -24,13 +24,15 @@
 }
 
 .input-fields {
-    background-color:rgba(105,225,241,255);
+    background-color: rgba(105,225,241,255);
     grid-area: img2;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    padding-right: 40px;
+    padding-top: 30px;
 }
 
 .list-area {
@@ -101,10 +103,11 @@
 
 
 button {
-    padding: 10px 50px;
+    padding: 10px 40px;
     font-family: Oswald;
+    font-size: medium;
     background-color: rgba(105,225,241,255);
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all .3s ease 0s;
 }
@@ -140,7 +143,7 @@ button:hover {
     border: .05em solid black;
     border-radius: .6em;
     margin-right: .5em;
-    background-color: white;
+    background-color: #eaebeb;
 }
 
 .input-item label:hover::before, .input-item input[type='checkbox']:hover + label::before {
@@ -167,4 +170,9 @@ button:hover {
     padding: 10px;
     font-family: Oswald;
     font-size: 22px;
+}
+
+#main-input {
+    background-color: #eaebeb;
+    border-radius: 7px;
 }

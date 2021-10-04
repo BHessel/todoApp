@@ -68,9 +68,9 @@ function App() {
         <img src={LASC} />
       </div>
         <div className='input-fields'> 
-          <input className='center' ref={todoNameRef} type="text" />
+          <input className='center' id='main-input' ref={todoNameRef} type="text" />
           <button className='center' onClick={handleAddTodo}> Add Todo </button>
-          <button className='center' onClick={handleClear}>Clear Completed Todos</button>
+          <button className='center' onClick={handleClear}>Clear Completed</button>
         </div>
       <div className='list-area'>
         <div className='side-title'>Tasks Remaining</div>
