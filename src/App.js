@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
 import uniqueRandom from 'unique-random'
 import Header from './header'
+import LASC from './LASC.png'
 //uuid library wasn't working so I found this uniqueRandom lib. Probably not perfect but allows me to continue on
 
 const random = uniqueRandom(1, 100)
@@ -63,10 +64,12 @@ function App() {
     <>
     <Header />
     <div className='grid-container'> 
-      <div className='input-area'>  
-        <input className= 'center' ref={todoNameRef} type="text" />
-        <button className= 'center' onClick={handleAddTodo}> Add Todo </button>
-        <button className= 'center' onClick={handleClear}>Clear Completed Todos</button>
+      <div className='input-area'>
+        <div className='input-fields'> 
+          <input className= 'center' ref={todoNameRef} type="text" />
+          <button className= 'center' onClick={handleAddTodo}> Add Todo </button>
+          <button className= 'center' onClick={handleClear}>Clear Completed Todos</button>
+        </div>
       </div>
 
       <div className='list-area'>
