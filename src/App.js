@@ -64,14 +64,12 @@ function App() {
     <>
     <Header />
     <div className='grid-container'> 
-      <div className='input-area'>
+      <div className='input-area'></div>
         <div className='input-fields'> 
           <input className= 'center' ref={todoNameRef} type="text" />
           <button className= 'center' onClick={handleAddTodo}> Add Todo </button>
           <button className= 'center' onClick={handleClear}>Clear Completed Todos</button>
         </div>
-      </div>
-
       <div className='list-area'>
         <TodoList
           toggleTodo={toggleTodo}

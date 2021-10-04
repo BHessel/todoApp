@@ -2,27 +2,31 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 25% 25%;
     grid-template-rows: 500px 75px;
     grid-template-areas:
-        "input list"
-        "tasks tasks"
+        "img1 img2 list"
+        "tasks tasks tasks"
 }
 
 
 .input-area {
     display: grid;
     background-color:rgb(106, 228, 236);
-    grid-area: input;
+    grid-area: img1;
     background-image: url('./LASC.png');
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .input-fields {
+    background-color:rgb(106, 228, 236);
+    grid-area: img2;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    align-items: flex-end;
-    grid-area: input;    
+    gap: 20px;
 }
 
 .list-area {
