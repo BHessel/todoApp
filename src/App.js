@@ -61,7 +61,7 @@ function App() {
 
 
   return (
-    <>
+    <div id="main">
     <Header />
     <div className='grid-container'> 
       <div className='input-area'>
@@ -89,7 +89,7 @@ function App() {
       </div>
 
     </div>
-    </>
+    </div>
   )
 }
 

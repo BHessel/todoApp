@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 export default function Header() {
+  // let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  Modal.setAppElement(document.querySelector('#main'));
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  //   const afterOpenModal = () => {
+  //     console.log(subtitle)
+  //     // references are now sync'd and can be accessed.
+  //     subtitle.style.color = "#f00";
+  //   };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="header">
       <div className="title">
@@ -14,12 +44,18 @@ export default function Header() {
       <div className="options">
         <ul className="head-links">
           <li>
-            <a
-              href="https://opensea.io/collection/lonelyalienspaceclub"
-              target="_blank"
-            >
+            <button onClick={openModal}>
               About
-            </a>
+              <Modal
+                isOpen={modalIsOpen}
+                // onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={customStyles}
+              >
+                <h2>Content Inside Modal Test!</h2>
+                <button onClick={closeModal}>close</button>
+              </Modal>
+            </button>
           </li>
           <li>
             <a href="https://github.com/BHessel/todoApp" target="_blank">
