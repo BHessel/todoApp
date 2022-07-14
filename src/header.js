@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+// const customStyles = {
+//   content: {
+//     top: "50%",
+//     left: "50%",
+//     right: "auto",
+//     bottom: "auto",
+//     marginRight: "-50%",
+//     transform: "translate(-50%, -50%)",
+//   },
+// };
 
-export default function Header() {
-  // let subtitle;
-  const [modalIsOpen, setIsOpen] = useState(false);
+export default function Header(props) {
+    const { openModal, onRequestClose, modalIsOpen, style } = props;
+//   let subtitle;
+//   const [modalIsOpen, setIsOpen] = useState(false);
 
-  Modal.setAppElement(document.querySelector('#main'));
-  const openModal = () => {
-    setIsOpen(true);
-  };
+//   Modal.setAppElement(document.querySelector('#main'));
+//   const openModal = () => {
+//     setIsOpen(true);
+//   };
 
   //   const afterOpenModal = () => {
   //     console.log(subtitle)
@@ -27,9 +28,9 @@ export default function Header() {
   //     subtitle.style.color = "#f00";
   //   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+//   const closeModal = () => {
+//     setIsOpen(false);
+//   };
 
   return (
     <div className="header">
@@ -49,11 +50,11 @@ export default function Header() {
               <Modal
                 isOpen={modalIsOpen}
                 // onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
+                onRequestClose={onRequestClose}
+                // style={style}
               >
                 <h2>Content Inside Modal Test!</h2>
-                <button onClick={closeModal}>close</button>
+                <button onClick={onRequestClose}>close</button>
               </Modal>
             </button>
           </li>
