@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import uniqueRandom from "unique-random";
 import Header from "./header";
-import LASC from "./LASC.png";
+import LASC from "./images/LASC.png";
 //uuid library wasn't working so I found this uniqueRandom lib. Probably not perfect but allows me to continue on
 import Modal from "react-modal";
 

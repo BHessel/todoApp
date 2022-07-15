@@ -1,36 +1,9 @@
 import React from "react";
 import Modal from "react-modal";
-
-// const customStyles = {
-//   content: {
-//     top: "50%",
-//     left: "50%",
-//     right: "auto",
-//     bottom: "auto",
-//     marginRight: "-50%",
-//     transform: "translate(-50%, -50%)",
-//   },
-// };
+import BenDog from './images/bendog.png';
 
 export default function Header(props) {
     const { openModal, onRequestClose, modalIsOpen, style } = props;
-//   let subtitle;
-//   const [modalIsOpen, setIsOpen] = useState(false);
-
-//   Modal.setAppElement(document.querySelector('#main'));
-//   const openModal = () => {
-//     setIsOpen(true);
-//   };
-
-  //   const afterOpenModal = () => {
-  //     console.log(subtitle)
-  //     // references are now sync'd and can be accessed.
-  //     subtitle.style.color = "#f00";
-  //   };
-
-//   const closeModal = () => {
-//     setIsOpen(false);
-//   };
 
   return (
     <div className="header">
@@ -45,18 +18,28 @@ export default function Header(props) {
       <div className="options">
         <ul className="head-links">
           <li>
-            <button onClick={openModal}>
+            <a onClick={openModal}>
               About
               <Modal
                 isOpen={modalIsOpen}
-                // onAfterOpen={afterOpenModal}
                 onRequestClose={onRequestClose}
-                // style={style}
               >
-                <h2>Content Inside Modal Test!</h2>
-                <button onClick={onRequestClose}>close</button>
+                <h1>Hi, I'm Ben</h1>
+                <img src={BenDog} />
+                <h4>And that's my dog Callie</h4>
+                <p>The other year I was working for a SaaS company in Phoenix, in what became the final stop of my sales career.</p>
+                <p>While I had done relatively well in sales, I was sitting with one of our devs in the office one day, and couldn't stop thinking about how much cooler his job was than mine!</p>
+                <p>I never learned to code beyond a little HTML when I was younger, but I had always wanted to get my hands dirty.</p>
+                <p>One day I finally decided enough was enough, and that if I wasn't going to spend the next 30 years in sales, the time to change was right then.</p>
+                <p>Fast forward a bit, and now you get to look at this fancy little modal component, and we can meet in an interview!</p>
+
+                <h4>I look forward to meeting you,</h4>
+                <p>Ben</p>
+
+
+                <button onClick={onRequestClose}>Close</button>
               </Modal>
-            </button>
+            </a>
           </li>
           <li>
             <a href="https://github.com/BHessel/todoApp" target="_blank">
